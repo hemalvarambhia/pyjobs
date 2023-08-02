@@ -81,3 +81,13 @@ def update_candidate():
 @router.delete("/candidates/{id}")
 def delete_candidate():
     pass
+
+
+@router.get("/candidates/{id}/cv")
+def download_cv():
+    pass
+
+
+@router.put("/candidates/{id}/cv")
+def upload_cv():
+    pass
