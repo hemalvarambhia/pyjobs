@@ -1,4 +1,5 @@
 from enum import Enum
+from uuid import UUID
 
 from fastapi import APIRouter, Query
 from pydantic import BaseModel
@@ -49,17 +50,17 @@ def post_job():
 
 
 @router.get("/jobs/{id}")
-def get_job():
+def get_job(id: UUID):
     pass
 
 
 @router.put("/jobs/{id}")
-def update_job():
+def update_job(id: UUID):
     pass
 
 
 @router.post("/jobs/{id}/application")
-def apply_for_job():
+def apply_for_job(id: UUID):
     pass
 
 
