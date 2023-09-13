@@ -1,10 +1,34 @@
-from fastapi import APIRouter
+from enum import Enum
+
+from fastapi import APIRouter, Query
+from pydantic import BaseModel
 
 router = APIRouter()
 
 
+class SortEnum(Enum):
+    ASC = "asc"
+    DESC = "desc"
+
+
+class Pagination(BaseModel):
+    pass
+
+
+def pagination_params(
+    page: int = Query(ge=1, required=False, default=1),
+    perPage: int = Query(ge=1, le=100, required=False, default=100),
+    order: SortEnum = SortEnum.DESC,
+):
+    pass
+
+
 @router.get("/skills")
-def list_skills():
+def list_skills(
+    page: int = Query(ge=1, required=False, default=1),
+    perPage: int = Query(ge=1, le=100, required=False, default=100),
+    order: SortEnum = SortEnum.DESC,
+):
     pass
 
 
