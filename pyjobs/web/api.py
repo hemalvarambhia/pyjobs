@@ -65,7 +65,7 @@ def apply_for_job(id: UUID):
 
 
 @router.get("/jobs/{id}/applications")
-def list_job_applications_recruiter():
+def list_job_applications_recruiter(id: UUID):
     pass
 
 
@@ -75,12 +75,12 @@ def list_applications_made_by_candidate():
 
 
 @router.get("/applications/{id}")
-def get_applications_made_by_candidate():
+def get_applications_made_by_candidate(id: UUID):
     pass
 
 
 @router.post("/applications/{id}/cancel")
-def cancel_an_application():
+def cancel_an_application(id: UUID):
     pass
 
 
