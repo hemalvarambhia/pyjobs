@@ -2,6 +2,7 @@ from enum import Enum
 
 from fastapi import APIRouter, Query
 from pydantic import BaseModel
+from starlette import status
 
 router = APIRouter()
 
@@ -42,7 +43,7 @@ def list_jobs():
     pass
 
 
-@router.post("/jobs")
+@router.post("/jobs", status_code=status.HTTP_201_created)
 def post_job():
     pass
 
