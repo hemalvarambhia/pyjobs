@@ -59,7 +59,7 @@ def update_job(id: UUID):
     pass
 
 
-@router.post("/jobs/{id}/application")
+@router.post("/jobs/{id}/application", status_code=status.HTTP_201_CREATED)
 def apply_for_job(id: UUID):
     pass
 
