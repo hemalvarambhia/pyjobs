@@ -13,6 +13,12 @@ class SortEnum(Enum):
     DESC = "desc"
 
 
+class CandidateStatus(Enum):
+    ACTIVELY_LOOKING = "activelyLooking"
+    NOT_LOOKING = "notLooking"
+    NOT_LOOKING_BUT_INTERESTED = "notLookingButInterested"
+
+
 class Pagination(BaseModel):
     pass
 
@@ -85,11 +91,20 @@ def cancel_an_application(id: UUID):
 
 
 @router.get("/candidates")
-def list_candidates():
+def list_candidates(
+    perPage: int = Query(default=10, ge=1),
+    page: int = Query(default=1, ge=1),
+    status: CandidateStatus | None = None,
+    skills: UUID | None = None,
+    experience: int | None = None,
+    location: UUID | None = None,
+    willingToRelocate: bool | None = None,
+    remoteOK: bool | None = None,
+):
     pass
 
 
-@router.post("/candidates")
+@router.post("/candidates", status_code=status.HTTP_201_CREATED)
 def register_candidate():
     pass
 
@@ -104,7 +119,7 @@ def update_candidate():
     pass
 
 
-@router.delete("/candidates/{id}")
+@router.delete("/candidates/{id}", status_code=status.HTTP_204_NO_CONTENT)
 def delete_candidate():
     pass
 
