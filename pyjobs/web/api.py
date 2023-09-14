@@ -28,7 +28,7 @@ def pagination_params(
     perPage: int = Query(ge=1, le=100, required=False, default=100),
     order: SortEnum = SortEnum.DESC,
 ):
-    pass
+    return Pagination(page=page, perPage=perPage, order=order.value)
 
 
 @router.get("/skills")
