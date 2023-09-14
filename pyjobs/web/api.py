@@ -1,7 +1,8 @@
 from enum import Enum
+from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Query, Depends
 from pydantic import BaseModel
 from starlette import status
 
@@ -32,11 +33,7 @@ def pagination_params(
 
 
 @router.get("/skills")
-def list_skills(
-    page: int = Query(ge=1, required=False, default=1),
-    perPage: int = Query(ge=1, le=100, required=False, default=100),
-    order: SortEnum = SortEnum.DESC,
-):
+def list_skills(pagination: Annotated[Pagination, Depends(pagination_params)]):
     pass
 
 
