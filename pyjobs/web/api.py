@@ -110,12 +110,12 @@ def register_candidate():
 
 
 @router.get("/candidates/{id}")
-def get_candidate():
+def get_candidate(id: UUID):
     pass
 
 
 @router.put("/candidates/{id}")
-def update_candidate():
+def update_candidate(id: UUID):
     pass
 
 
@@ -130,5 +130,5 @@ def download_cv():
 
 
 @router.put("/candidates/{id}/cv")
-def upload_cv():
+def upload_cv(id: UUID):
     pass
