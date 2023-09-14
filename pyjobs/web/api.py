@@ -38,12 +38,12 @@ def list_skills(pagination: Annotated[Pagination, Depends(pagination_params)]):
 
 
 @router.get("/locations")
-def list_locations():
+def list_locations(pagination: Annotated[Pagination, Depends(pagination_params)]):
     pass
 
 
 @router.get("/jobs")
-def list_jobs():
+def list_jobs(pagination: Annotated[Pagination, Depends(pagination_params)]):
     pass
 
 
@@ -73,7 +73,9 @@ def list_job_applications_recruiter(id: UUID):
 
 
 @router.get("/applications")
-def list_applications_made_by_candidate():
+def list_applications_made_by_candidate(
+    pagination: Annotated[Pagination, Depends(pagination_params)]
+):
     pass
 
 
