@@ -1,3 +1,4 @@
+from datetime import date
 from enum import Enum
 from typing import Annotated
 from uuid import UUID
@@ -25,6 +26,11 @@ class JobsSortBy(Enum):
     RATE = "rate"
 
 
+class ContractType(Enum):
+    PERMANENT = "permanent"
+    CONTRACT = "contract"
+
+
 class Pagination(BaseModel):
     pass
 
@@ -48,7 +54,12 @@ def list_locations(pagination: Annotated[Pagination, Depends(pagination_params)]
 
 
 @router.get("/jobs")
-def list_jobs(pagination: Annotated[Pagination, Depends(pagination_params)]):
+def list_jobs(
+    pagination: Annotated[Pagination, Depends(pagination_params)],
+    sortBy: JobsSortBy | None = None,
+    contractType: ContractType | None = None,
+    dateSincePosted: date | None = None,
+):
     pass
 
 
