@@ -155,6 +155,8 @@ def upload_cv(id: UUID):
 
 @router.get("/recruiters")
 def list_recruiters():
+    # TODO - add query parameters
+
     pass
 
 
@@ -165,14 +167,20 @@ def register_recruiter():
 
 @router.put("/recruiters/{id}")
 def update_recruiter():
+    # TODO - add query parameters
+
     pass
 
 
 @router.get("/recruiters/{id}")
 def get_recruiter():
+    # TODO - add query parameters
+
     pass
 
 
 @router.delete("/recruiters/{id}")
 def delete_recruiter():
+    # TODO - add query parameters
+
     pass
