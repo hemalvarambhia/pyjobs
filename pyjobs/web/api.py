@@ -20,6 +20,11 @@ class CandidateStatus(Enum):
     NOT_LOOKING_BUT_INTERESTED = "notLookingButInterested"
 
 
+class JobsSortBy(Enum):
+    DATE_POSTED = "datePosted"
+    RATE = "rate"
+
+
 class Pagination(BaseModel):
     pass
 
