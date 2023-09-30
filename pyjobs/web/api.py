@@ -59,6 +59,7 @@ def list_jobs(
     sortBy: JobsSortBy | None = None,
     contractType: ContractType | None = None,
     dateSincePosted: date | None = None,
+    minimumInclusiveRate: int | None = None,
 ):
     pass
 
