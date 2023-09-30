@@ -60,6 +60,7 @@ def list_jobs(
     contractType: ContractType | None = None,
     dateSincePosted: date | None = None,
     minimumInclusiveRate: int | None = None,
+    keyword: str | None = None,
 ):
     pass
 
