@@ -61,6 +61,8 @@ def list_jobs(
     dateSincePosted: date | None = None,
     minimumInclusiveRate: int | None = None,
     keyword: str | None = None,
+    location: UUID | None = None,
+    skills: UUID | None = None,
 ):
     pass
 
